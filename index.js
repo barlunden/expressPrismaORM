@@ -40,7 +40,11 @@ app.get('/get-entry/:id', async (req, res) => {
         }
     });
 
-    res.send({entry: entry});
+    if (!entry) {
+        return res.status(404).send({message: 'Entry not found'});
+    } else {
+        return res.send({entry: entry});
+    }
 });
 
 app.listen(3713, () => {
