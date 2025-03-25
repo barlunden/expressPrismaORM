@@ -7,7 +7,7 @@ const prisma = new PrismaClient();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send({ message: "Hello World" });
+    res.send({ message: "Choose your path: '/entries' - to get all entries, '/create-entry' - to post an entry, or '/get-entry/:id' - to get a specific entry by its ID." });
 });
 
 app.get('/entries', async (req, res) => {
